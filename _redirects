@@ -1,0 +1,2 @@
+# Redirect domain aliases to primary domain
+https://pulumi.cloud/* https://docs.pulumi.cloud/:splat 301!
