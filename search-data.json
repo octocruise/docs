@@ -4,11 +4,11 @@ layout: null
 
 [
 {% for page in site.pages %}
-{% if page.url == '/404.html' or page.url == '/install/changelog.html' %}
+{% if page.url == '/404.html' %}
   {% continue %}
 {% endif %}
 {
-  "slug": "{{ page.url | slugify }}",
+  "id": "{{ page.url | slugify }}",
   "title": "{{ page.title | xml_escape }}",
   "content": {{ page.content | strip_html | strip_newlines | jsonify }},
   "url": "{{ page.url | xml_escape }}"

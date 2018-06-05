@@ -1,0 +1,46 @@
+<style>
+
+#searchbox {
+    z-index: 8;
+}
+
+#searchresults {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    overflow: auto;
+    padding: 68px 32px 0;
+    color: #fafafa;
+    width: auto;
+    max-height: 95vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 7;
+    background-color: #333;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.3);
+    box-sizing: border-box;
+}
+</style>
+
+<input type="text" id="searchbox" onchange="doSearch()" onkeyup="doSearch()" onpaste="doSearch()">
+
+<div id="searchresults" style="visibility: hidden">
+    Hello World
+</div>
+
+<script>
+    window.doSearch = function() {
+        var val = document.getElementById("searchbox").value;
+        document.getElementById("searchresults").style.visibility = !!val ? "visible" : "hidden";
+        worker.postMessage({ type: "query-index", payload: val });
+    };
+
+    var worker = new Worker("/js/search-worker.js");
+    worker.onmessage = function(message) {
+        console.log("message received from worker");
+        console.log
+    };
+    worker.postMessage({ type: "load-index" });
+</script>
