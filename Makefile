@@ -36,6 +36,7 @@ build:
 	@echo -e "\033[0;32mBUILD:\033[0m"
 	bundle install --path=./vendor
 	bundler exec jekyll build
+	node ./scripts/build-index.js < ./_site/search-data.json > ./_site/search-index.json
 
 .PHONY: test
 test:
