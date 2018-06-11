@@ -5,17 +5,9 @@ comment3: prototypical Jekyll/Liquid template file.
 ---
 
 /**
- * Pulumi CSS Styles
- *
- * We start with including the full Tachyons framework (http://tachyons.io).
- * This works well for definining components. To see how this would work for
- * a large website, see the Heroku's Purple3 (https://purple3.herokuapp.com).
- */
-
-/**
  * Size constants
  */
-$CENTER-WIDTH: 1200px;
+$CENTER-WIDTH: 1400px;
 $UTILITYBAR-HEIGHT: 45px;
 $TOOLBAR-HEIGHT: 110px;
 $TAB-GROUP-HEIGHT: 60px;
@@ -30,7 +22,7 @@ $MOBILE-WIDTH: 768px;
 $font-family: 'Helvetica Neue',-apple-system,BlinkMacSystemFont,Roboto,'Segoe UI';
 $header-font-family: 'Helvetica Neue',-apple-system,BlinkMacSystemFont,Roboto,'Segoe UI';
 $code-font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
- 
+
 /**
  * Colors
  */
@@ -304,46 +296,33 @@ a.btn > svg {
         margin-left: 40px;
         color: #fff;
         text-decoration: none;
-
-        display: flex;
-        align-items: center;
     }
 }
 
 .toolbar {
-    display: flex;
     height: $TOOLBAR-HEIGHT;
-    padding: 0 12px;
-    width: 100%;
+    background-color: #371847;
+
+    display: flex;
     align-items: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -webkit-box-pack: center;
-    z-index: 6;
 }
 
 .toolbar-content {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    max-width: 1200px;
-}
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 8px;
+    width: $CENTER-WIDTH;
 
-.toolbar-button {
-    color: white;
-}
-
-.toolbar-icon {
-    color: white;
-}
-
-.toolbar-item {
-    align-self: center;
-    margin: 8px 8px;
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
 }
 
 .toolbar-logo {
     width: 142px;
+    margin-right: 12px;
 
     // Workaround for Chrome rendering issue related to SVG while other CSS transition
     // effects are occurring at the same time. See:
@@ -351,22 +330,21 @@ a.btn > svg {
     transform: translateZ(0);
 }
 
-.toolbar-spacer {
-    flex-grow: 1;
-    -webkit-box-flex: 1;
+.toolbar-button {
+    border: 1px solid transparent;
+    transition: all .15s ease-in-out;
+    padding: 6px 19px;
+    border-radius: 3px;
 }
 
-.toolbar-tabs {
-    width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    vertical-align: middle;
-    height: $TAB-GROUP-HEIGHT;
-    border-bottom: 1px solid rgba(0,0,0,.12);
-    z-index: 1;
+.toolbar-button:hover {
+    background-color: hsla(0,0%,100%,.1);
+    border: 1px solid #5c3073;
 }
-.toolbar-tabs a:hover {
-    text-decoration: none;
+
+.toolbar-button.is-active {
+    background-color: hsla(0,0%,100%,.1);
+    border: 1px solid #5c3073;
 }
 
 .mdl-tabs__tab {
@@ -500,36 +478,6 @@ a.btn > svg {
 }
 
 @media (max-width: $MOBILE-WIDTH) {
-    /* Hide the WELCOME tab on mobile (there isn't enough space for it, and the Pulumi logo suffices). */
-    .welcome-tab {
-        display: none;
-    }
-}
-
-.mdl-layout__header-row {
-    padding: 0 0;
-}
-
-.mdl-layout__drawer {
-    padding: $TOOLBAR-HEIGHT 8px 8px 8px;
-}
-
-// Always hide the default drawer toggle button.
-.mdl-layout__drawer-button {
-    display: none;
-}
-
-// Hide our custom toggle drawer button by default.
-.toggle-drawer-button {
-    display: none;
-}
-
-@media (max-width: $MOBILE-WIDTH) {
-    // Show the toggle drawer button.
-    .toggle-drawer-button {
-        display: block;
-    }
-
     // Hide the normal toc on the page, since it will now
     // be accessed through the drawer.
     .column.docsToc {
