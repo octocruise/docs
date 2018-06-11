@@ -16,7 +16,8 @@ comment3: prototypical Jekyll/Liquid template file.
  * Size constants
  */
 $CENTER-WIDTH: 1200px;
-$TOOLBAR-HEIGHT: 60px;
+$UTILITYBAR-HEIGHT: 45px;
+$TOOLBAR-HEIGHT: 110px;
 $TAB-GROUP-HEIGHT: 60px;
 $MOBILE-WIDTH: 768px;
 
@@ -282,6 +283,33 @@ a.btn > svg {
     }
 }
 
+.utility-bar {
+    height: $UTILITYBAR-HEIGHT;
+    background-color: #000;
+    border-bottom: 1px solid #512668;
+
+    display: flex;
+    align-items: center;
+}
+
+.utility-bar-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0 auto;
+    padding: 0 8px;
+    width: $CENTER-WIDTH;
+
+    a {
+        margin-left: 40px;
+        color: #fff;
+        text-decoration: none;
+
+        display: flex;
+        align-items: center;
+    }
+}
+
 .toolbar {
     display: flex;
     height: $TOOLBAR-HEIGHT;
@@ -301,11 +329,6 @@ a.btn > svg {
     max-width: 1200px;
 }
 
-.toolbar-shadow {
-    -webkit-box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
-    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
-}
-
 .toolbar-button {
     color: white;
 }
@@ -320,7 +343,7 @@ a.btn > svg {
 }
 
 .toolbar-logo {
-    height: 20px;
+    width: 142px;
 
     // Workaround for Chrome rendering issue related to SVG while other CSS transition
     // effects are occurring at the same time. See:
