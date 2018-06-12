@@ -19,6 +19,8 @@ $MOBILE-WIDTH: 768px;
 @import url('https://fonts.googleapis.com/css?family=Oxygen');
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i|Ubuntu:400,700');
+
 $font-family: 'Helvetica Neue',-apple-system,BlinkMacSystemFont,Roboto,'Segoe UI';
 $header-font-family: 'Helvetica Neue',-apple-system,BlinkMacSystemFont,Roboto,'Segoe UI';
 $code-font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
@@ -289,7 +291,7 @@ a.btn > svg {
     align-items: center;
     justify-content: flex-end;
     margin: 0 auto;
-    padding: 0 8px;
+    padding: 0 24px;
     width: $CENTER-WIDTH;
 
     a {
@@ -311,7 +313,7 @@ a.btn > svg {
     display: flex;
     align-items: center;
     margin: 0 auto;
-    padding: 0 8px;
+    padding: 0 24px;
     width: $CENTER-WIDTH;
 
     a {
