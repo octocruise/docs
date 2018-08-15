@@ -27,7 +27,7 @@ Each tutorial walks through an end-to-end scenario in 5 minutes:
 
 ## <a name="examples"></a>Examples
 
-Our [examples repo](https://github.com/pulumi/examples) on GitHub contains examples across many clouds -- AWS, Azure,
+Our [Examples repo](https://github.com/pulumi/examples) on GitHub contains examples across many clouds -- AWS, Azure,
 GCP, and Kubernetes -- languages -- JavaScript, TypeScript, Python, and Go -- and scenarios -- containers, serverless,
 and infrastructure. Each example is self-contained and easily deployable with instructions in its README.
 
